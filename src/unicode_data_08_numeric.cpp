@@ -1852,4 +1852,3 @@ unicode_codepoint_numeric(
     auto it = data.find(code);
     return it != data.end() ? (*it).second.c_str() : nullptr;
 }
-

@@ -17659,4 +17659,3 @@ unicode_codepoint_category(
     auto it = data.find(code);
     return it != data.end() ? (*it).second : unicode_Category_Lo;
 }
-

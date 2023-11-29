@@ -34933,4 +34933,3 @@ unicode_codepoint_name(
     auto it = data.find(code);
     return it != data.end() ? (*it).second.c_str() : nullptr;
 }
-

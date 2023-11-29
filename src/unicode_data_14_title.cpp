@@ -1466,4 +1466,3 @@ unicode_codepoint_title(
     auto it = data.find(code);
     return it != data.end() ? (*it).second : unicode_codepoint_upper(code);
 }
-

@@ -693,4 +693,3 @@ unicode_codepoint_decimal(
     auto it = data.find(code);
     return it != data.end() ? (*it).second.c_str() : nullptr;
 }
-

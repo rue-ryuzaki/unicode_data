@@ -565,4 +565,3 @@ unicode_codepoint_mirror(
     auto it = data.find(code);
     return it != data.end() ? (*it).second : unicode_Mirror_N;
 }
-

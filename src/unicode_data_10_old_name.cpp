@@ -1991,4 +1991,3 @@ unicode_codepoint_old_name(
     auto it = data.find(code);
     return it != data.end() ? (*it).second.c_str() : nullptr;
 }
-

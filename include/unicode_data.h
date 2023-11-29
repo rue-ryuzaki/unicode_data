@@ -225,6 +225,17 @@ unicode_data(
         unicode_codepoint code);
 
 /*!
+ *  \brief Check if unicode codepoint exists
+ *
+ *  \param code Unicode codepoint
+ *
+ *  \return 1 if codepoint exists, otherwise 0
+ */
+int
+unicode_codepoint_exists(
+        unicode_codepoint code);
+
+/*!
  *  \brief Get unicode codepoint name
  *
  *  \param code Unicode codepoint

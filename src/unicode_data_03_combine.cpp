@@ -934,4 +934,3 @@ unicode_codepoint_combine(
     auto it = data.find(code);
     return it != data.end() ? (*it).second : 0;
 }
-

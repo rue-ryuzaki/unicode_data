@@ -1445,4 +1445,3 @@ unicode_codepoint_lower(
     auto it = data.find(code);
     return it != data.end() ? (*it).second : 0;
 }
-

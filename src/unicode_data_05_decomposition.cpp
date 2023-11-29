@@ -5870,4 +5870,3 @@ unicode_codepoint_decomposition(
     auto it = data.find(code);
     return it != data.end() ? (*it).second.c_str() : nullptr;
 }
-

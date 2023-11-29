@@ -1462,4 +1462,3 @@ unicode_codepoint_upper(
     auto it = data.find(code);
     return it != data.end() ? (*it).second : 0;
 }
-

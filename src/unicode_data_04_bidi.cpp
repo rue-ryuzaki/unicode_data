@@ -11548,4 +11548,3 @@ unicode_codepoint_bidi(
     auto it = data.find(code);
     return it != data.end() ? (*it).second : unicode_BIDI_L;
 }
-
