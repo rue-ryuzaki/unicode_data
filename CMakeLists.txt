@@ -6,7 +6,7 @@ endif()
 
 include(cmake/prelude.cmake)
 
-set(LIBRARY_HEADER include/unicode_data.h)
+set(LIBRARY_HEADER include/unicode_data/unicode_data.h)
 
 file(READ ${LIBRARY_HEADER} CURRENT_VERSION_H)
 string(REGEX MATCH "\#define UNICODE_DATA_VERSION_MAJOR +([0-9]+)" MAJOR_VERSION ${CURRENT_VERSION_H})
@@ -36,7 +36,7 @@ message("unicode_data build standard: C++${CMAKE_CXX_STANDARD}")
 
 include_directories(include)
 
-file(GLOB_RECURSE PROJECT_SOURCES "include/*.h" "src/*.c*")
+file(GLOB_RECURSE PROJECT_SOURCES "include/unicode_data/*.h" "src/*.c*")
 
 set(SRC_LIST ${PROJECT_SOURCES})
 
