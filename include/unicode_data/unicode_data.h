@@ -389,6 +389,39 @@ unicode_codepoint
 unicode_codepoint_title(
         unicode_codepoint code);
 
+/*!
+ *  \brief Get unicode codepoint to upper codepoint
+ *
+ *  \param code Unicode codepoint
+ *
+ *  \return Upper codepoint for selected codepoint
+ */
+unicode_codepoint
+unicode_codepoint_toupper(
+        unicode_codepoint code);
+
+/*!
+ *  \brief Get unicode codepoint to lower codepoint
+ *
+ *  \param code Unicode codepoint
+ *
+ *  \return Lower codepoint for selected codepoint
+ */
+unicode_codepoint
+unicode_codepoint_tolower(
+        unicode_codepoint code);
+
+/*!
+ *  \brief Get unicode codepoint to title codepoint
+ *
+ *  \param code Unicode codepoint
+ *
+ *  \return Title codepoint for selected codepoint
+ */
+unicode_codepoint
+unicode_codepoint_totitle(
+        unicode_codepoint code);
+
 #ifdef __cplusplus
 }
 #endif  // __cplusplus
