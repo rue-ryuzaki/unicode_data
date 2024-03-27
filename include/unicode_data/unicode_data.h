@@ -2,7 +2,7 @@
  *
  * C/C++ UnicodeData library
  *
- * Copyright (C) 2023 Golubchikov Mihail <https://github.com/rue-ryuzaki>
+ * Copyright (C) 2023-2024 Golubchikov Mihail <https://github.com/rue-ryuzaki>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
