@@ -1,10 +1,10 @@
 #include "unicode_data/unicode_data.h"
 
-unicode_Data
+unicode_struct
 unicode_data(
         unicode_codepoint code)
 {
-    return unicode_Data{
+    return unicode_struct{
         code,
         unicode_codepoint_name(code),
         unicode_codepoint_category(code),

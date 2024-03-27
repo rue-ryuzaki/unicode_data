@@ -4,7 +4,7 @@ int
 unicode_codepoint_exists(
         unicode_codepoint code)
 {
-    return unicode_codepoint_name(code) == nullptr ? 0 : 1;
+    return unicode_codepoint_name(code).data == nullptr ? 0 : 1;
 }
 
 unicode_codepoint

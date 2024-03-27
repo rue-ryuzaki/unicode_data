@@ -21,6 +21,7 @@
 #ifndef _UNICODE_DATA_H_
 #define _UNICODE_DATA_H_
 
+#include <stddef.h>
 #include <stdint.h>
 
 #ifdef __cplusplus
@@ -195,22 +196,28 @@ typedef enum
 
 typedef struct
 {
+    char const* data;
+    size_t length;
+} unicode_string;
+
+typedef struct
+{
     unicode_codepoint code;
-    char const* name;
+    unicode_string name;
     unicode_Category category;
     uint32_t combine;
     unicode_BIDI bidi;
-    char const* decomposition;
-    char const* decimal;
-    char const* digit;
-    char const* numeric;
+    unicode_string decomposition;
+    unicode_string decimal;
+    unicode_string digit;
+    unicode_string numeric;
     unicode_Mirror mirror;
-    char const* old_name;
-    char const* comment;
+    unicode_string old_name;
+    unicode_string comment;
     unicode_codepoint upper;
     unicode_codepoint lower;
     unicode_codepoint title;
-} unicode_Data;
+} unicode_struct;
 
 // -- functions ---------------------------------------------------------------
 /*!
@@ -220,7 +227,7 @@ typedef struct
  *
  *  \return Data for selected codepoint
  */
-unicode_Data
+unicode_struct
 unicode_data(
         unicode_codepoint code);
 
@@ -242,7 +249,7 @@ unicode_codepoint_exists(
  *
  *  \return Name for selected codepoint if exists, otherwise null
  */
-char const*
+unicode_string
 unicode_codepoint_name(
         unicode_codepoint code);
 
@@ -286,7 +293,7 @@ unicode_codepoint_bidi(
  *
  *  \return Decomposition for selected codepoint if exists, otherwise null
  */
-char const*
+unicode_string
 unicode_codepoint_decomposition(
         unicode_codepoint code);
 
@@ -297,7 +304,7 @@ unicode_codepoint_decomposition(
  *
  *  \return Decimal value for selected codepoint if exists, otherwise null
  */
-char const*
+unicode_string
 unicode_codepoint_decimal(
         unicode_codepoint code);
 
@@ -308,7 +315,7 @@ unicode_codepoint_decimal(
  *
  *  \return Digit value for selected codepoint if exists, otherwise null
  */
-char const*
+unicode_string
 unicode_codepoint_digit(
         unicode_codepoint code);
 
@@ -319,7 +326,7 @@ unicode_codepoint_digit(
  *
  *  \return Numeric value for selected codepoint if exists, otherwise null
  */
-char const*
+unicode_string
 unicode_codepoint_numeric(
         unicode_codepoint code);
 
@@ -341,7 +348,7 @@ unicode_codepoint_mirror(
  *
  *  \return Old name for selected codepoint if exists, otherwise null
  */
-char const*
+unicode_string
 unicode_codepoint_old_name(
         unicode_codepoint code);
 
@@ -352,7 +359,7 @@ unicode_codepoint_old_name(
  *
  *  \return Comment for selected codepoint if exists, otherwise null
  */
-char const*
+unicode_string
 unicode_codepoint_comment(
         unicode_codepoint code);
 

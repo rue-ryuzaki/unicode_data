@@ -3,7 +3,7 @@
 #include <string>
 #include <unordered_map>
 
-char const*
+unicode_string
 unicode_codepoint_name(
         unicode_codepoint code)
 {
@@ -34931,5 +34931,7 @@ unicode_codepoint_name(
         data.insert(std::make_pair(0xe01ef,"VARIATION SELECTOR-256"));
     }
     auto it = data.find(code);
-    return it != data.end() ? (*it).second.c_str() : nullptr;
+    return it != data.end()
+            ? unicode_string{ (*it).second.c_str(), (*it).second.size() }
+            : unicode_string{ nullptr, 0 };
 }

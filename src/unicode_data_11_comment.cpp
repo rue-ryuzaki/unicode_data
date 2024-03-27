@@ -1,8 +1,8 @@
 #include "unicode_data/unicode_data.h"
 
-char const*
+unicode_string
 unicode_codepoint_comment(
         unicode_codepoint)
 {
-    return nullptr;
+    return unicode_string{ nullptr, 0 };
 }

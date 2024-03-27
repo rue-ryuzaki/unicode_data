@@ -3,7 +3,7 @@
 #include <string>
 #include <unordered_map>
 
-char const*
+unicode_string
 unicode_codepoint_numeric(
         unicode_codepoint code)
 {
@@ -1850,5 +1850,7 @@ unicode_codepoint_numeric(
         data.insert(std::make_pair(0x2f890,"9"));
     }
     auto it = data.find(code);
-    return it != data.end() ? (*it).second.c_str() : nullptr;
+    return it != data.end()
+            ? unicode_string{ (*it).second.c_str(), (*it).second.size() }
+            : unicode_string{ nullptr, 0 };
 }
