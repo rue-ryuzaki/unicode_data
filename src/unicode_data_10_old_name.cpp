@@ -3,7 +3,7 @@
 #include <string>
 #include <unordered_map>
 
-unicode_string
+unicode_string_view
 unicode_codepoint_old_name(
         unicode_codepoint code)
 {
@@ -1990,6 +1990,6 @@ unicode_codepoint_old_name(
     }
     auto it = data.find(code);
     return it != data.end()
-            ? unicode_string{ (*it).second.c_str(), (*it).second.size() }
-            : unicode_string{ nullptr, 0 };
+            ? unicode_string_view{ (*it).second.c_str(), (*it).second.size() }
+            : unicode_string_view{ nullptr, 0 };
 }
