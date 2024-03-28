@@ -30,6 +30,7 @@ if (NOT CMAKE_CXX_STANDARD)
     set(CMAKE_CXX_STANDARD 11)
 endif()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 message("unicode_data version: ${PROJECT_VERSION}")
 message("unicode_data build standard: C++${CMAKE_CXX_STANDARD}")
