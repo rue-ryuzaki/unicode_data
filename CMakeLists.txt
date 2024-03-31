@@ -32,8 +32,8 @@ endif()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-message("unicode_data version: ${PROJECT_VERSION}")
-message("unicode_data build standard: C++${CMAKE_CXX_STANDARD}")
+message(STATUS "unicode_data version: ${PROJECT_VERSION}")
+message(STATUS "unicode_data build standard: C++${CMAKE_CXX_STANDARD}")
 
 include_directories(include)
 
