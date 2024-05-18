@@ -4,7 +4,7 @@
 #include <unordered_map>
 
 unicode_string_view
-unicode_codepoint_name(
+unicode_codepoint_name_0(
         unicode_codepoint code)
 {
     static std::unordered_map<unicode_codepoint, std::string> data;
@@ -8347,6 +8347,19 @@ unicode_codepoint_name(
         data.insert(std::make_pair(0x23fd,"POWER ON SYMBOL"));
         data.insert(std::make_pair(0x23fe,"POWER SLEEP SYMBOL"));
         data.insert(std::make_pair(0x23ff,"OBSERVER EYE SYMBOL"));
+    }
+    auto it = data.find(code);
+    return it != data.end()
+            ? unicode_string_view{ (*it).second.c_str(), (*it).second.size() }
+            : unicode_string_view{ nullptr, 0 };
+}
+
+unicode_string_view
+unicode_codepoint_name_1(
+        unicode_codepoint code)
+{
+    static std::unordered_map<unicode_codepoint, std::string> data;
+    if (data.empty()) {
         data.insert(std::make_pair(0x2400,"SYMBOL FOR NULL"));
         data.insert(std::make_pair(0x2401,"SYMBOL FOR START OF HEADING"));
         data.insert(std::make_pair(0x2402,"SYMBOL FOR START OF TEXT"));
@@ -17518,6 +17531,19 @@ unicode_codepoint_name(
         data.insert(std::make_pair(0x10373,"OLD PERMIC LETTER YU"));
         data.insert(std::make_pair(0x10374,"OLD PERMIC LETTER YA"));
         data.insert(std::make_pair(0x10375,"OLD PERMIC LETTER IA"));
+    }
+    auto it = data.find(code);
+    return it != data.end()
+            ? unicode_string_view{ (*it).second.c_str(), (*it).second.size() }
+            : unicode_string_view{ nullptr, 0 };
+}
+
+unicode_string_view
+unicode_codepoint_name_2(
+        unicode_codepoint code)
+{
+    static std::unordered_map<unicode_codepoint, std::string> data;
+    if (data.empty()) {
         data.insert(std::make_pair(0x10376,"COMBINING OLD PERMIC LETTER AN"));
         data.insert(std::make_pair(0x10377,"COMBINING OLD PERMIC LETTER DOI"));
         data.insert(std::make_pair(0x10378,"COMBINING OLD PERMIC LETTER ZATA"));
@@ -25888,6 +25914,19 @@ unicode_codepoint_name(
         data.insert(std::make_pair(0x16fe4,"KHITAN SMALL SCRIPT FILLER"));
         data.insert(std::make_pair(0x16ff0,"VIETNAMESE ALTERNATE READING MARK CA"));
         data.insert(std::make_pair(0x16ff1,"VIETNAMESE ALTERNATE READING MARK NHAY"));
+    }
+    auto it = data.find(code);
+    return it != data.end()
+            ? unicode_string_view{ (*it).second.c_str(), (*it).second.size() }
+            : unicode_string_view{ nullptr, 0 };
+}
+
+unicode_string_view
+unicode_codepoint_name_3(
+        unicode_codepoint code)
+{
+    static std::unordered_map<unicode_codepoint, std::string> data;
+    if (data.empty()) {
         data.insert(std::make_pair(0x17000,"<Tangut Ideograph, First>"));
         data.insert(std::make_pair(0x187f7,"<Tangut Ideograph, Last>"));
         data.insert(std::make_pair(0x18800,"TANGUT COMPONENT-001"));
@@ -34934,4 +34973,20 @@ unicode_codepoint_name(
     return it != data.end()
             ? unicode_string_view{ (*it).second.c_str(), (*it).second.size() }
             : unicode_string_view{ nullptr, 0 };
+}
+
+unicode_string_view
+unicode_codepoint_name(
+        unicode_codepoint code)
+{
+    if (code < 0x2400) {
+        return unicode_codepoint_name_0(code);
+    }
+    if (code < 0x10376) {
+        return unicode_codepoint_name_1(code);
+    }
+    if (code < 0x17000) {
+        return unicode_codepoint_name_2(code);
+    }
+    return unicode_codepoint_name_3(code);
 }

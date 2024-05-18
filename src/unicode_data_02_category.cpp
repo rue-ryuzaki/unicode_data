@@ -3,7 +3,7 @@
 #include <unordered_map>
 
 unicode_Category
-unicode_codepoint_category(
+unicode_codepoint_category_0(
         unicode_codepoint code)
 {
     static std::unordered_map<unicode_codepoint, unicode_Category> data;
@@ -4975,6 +4975,17 @@ unicode_codepoint_category(
         data.insert(std::make_pair(0x23fd,unicode_Category_So));
         data.insert(std::make_pair(0x23fe,unicode_Category_So));
         data.insert(std::make_pair(0x23ff,unicode_Category_So));
+    }
+    auto it = data.find(code);
+    return it != data.end() ? (*it).second : unicode_Category_Lo;
+}
+
+unicode_Category
+unicode_codepoint_category_1(
+        unicode_codepoint code)
+{
+    static std::unordered_map<unicode_codepoint, unicode_Category> data;
+    if (data.empty()) {
         data.insert(std::make_pair(0x2400,unicode_Category_So));
         data.insert(std::make_pair(0x2401,unicode_Category_So));
         data.insert(std::make_pair(0x2402,unicode_Category_So));
@@ -9754,6 +9765,17 @@ unicode_codepoint_category(
         data.insert(std::make_pair(0x10323,unicode_Category_No));
         data.insert(std::make_pair(0x10341,unicode_Category_Nl));
         data.insert(std::make_pair(0x1034a,unicode_Category_Nl));
+    }
+    auto it = data.find(code);
+    return it != data.end() ? (*it).second : unicode_Category_Lo;
+}
+
+unicode_Category
+unicode_codepoint_category_2(
+        unicode_codepoint code)
+{
+    static std::unordered_map<unicode_codepoint, unicode_Category> data;
+    if (data.empty()) {
         data.insert(std::make_pair(0x10376,unicode_Category_Mn));
         data.insert(std::make_pair(0x10377,unicode_Category_Mn));
         data.insert(std::make_pair(0x10378,unicode_Category_Mn));
@@ -11761,6 +11783,17 @@ unicode_codepoint_category(
         data.insert(std::make_pair(0x16fe4,unicode_Category_Mn));
         data.insert(std::make_pair(0x16ff0,unicode_Category_Mc));
         data.insert(std::make_pair(0x16ff1,unicode_Category_Mc));
+    }
+    auto it = data.find(code);
+    return it != data.end() ? (*it).second : unicode_Category_Lo;
+}
+
+unicode_Category
+unicode_codepoint_category_3(
+        unicode_codepoint code)
+{
+    static std::unordered_map<unicode_codepoint, unicode_Category> data;
+    if (data.empty()) {
         data.insert(std::make_pair(0x1aff0,unicode_Category_Lm));
         data.insert(std::make_pair(0x1aff1,unicode_Category_Lm));
         data.insert(std::make_pair(0x1aff2,unicode_Category_Lm));
@@ -17658,4 +17691,20 @@ unicode_codepoint_category(
     }
     auto it = data.find(code);
     return it != data.end() ? (*it).second : unicode_Category_Lo;
+}
+
+unicode_Category
+unicode_codepoint_category(
+        unicode_codepoint code)
+{
+    if (code < 0x2400) {
+        return unicode_codepoint_category_0(code);
+    }
+    if (code < 0x10376) {
+        return unicode_codepoint_category_1(code);
+    }
+    if (code < 0x17000) {
+        return unicode_codepoint_category_2(code);
+    }
+    return unicode_codepoint_category_3(code);
 }
